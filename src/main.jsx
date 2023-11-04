@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import { RouterProvider } from 'react-router-dom'
+import Router from './Router/Router'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <h1 className='font-rancho text-6xl'>Testing</h1>
+     <RouterProvider router={Router} />
   </React.StrictMode>,
 )
