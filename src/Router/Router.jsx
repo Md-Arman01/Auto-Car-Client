@@ -6,6 +6,7 @@ import MyServices from "../Pages/MyServices/MyServices";
 import AddServices from "../Pages/AddServices/AddServices";
 import MySchedules from "../Pages/MySchedules/MySchedules";
 import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
   
 const Router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
         {
           path: '/login',
           element: <Login></Login>
+        },
+        {
+          path: '/register',
+          element: <Register></Register>
         },
       ]
     },
