@@ -9,7 +9,6 @@ import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate()
-    
   const {loginUser, loginWithGoogle, loginWithGithub} = useAuth()
 
 

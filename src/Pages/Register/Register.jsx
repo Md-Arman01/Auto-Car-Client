@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import { updateProfile } from "firebase/auth";
+import auth from "../../firebase/Firebase.confiq";
 
 const Register = () => {
-  const  {createUser} = useAuth()
+  const navigate = useNavigate()
+  const  {createUser, setUser} = useAuth()
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -34,7 +37,21 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         toast.success('Register Successfully!', { id: toastId })
+        navigate('/')
         console.log(result.user)
+
+        updateProfile(auth.currentUser, {
+          displayName: name, photoURL: photoURL
+        }).then(() => {
+          // Profile updated!
+          // ...
+          setUser({...auth.currentUser,displayName: name,
+            photoURL: photoURL})
+        }).catch((error) => {
+          console.log(error.message)
+          // An error occurred
+          // ...
+        });
         
       })
       .catch((error) => {
