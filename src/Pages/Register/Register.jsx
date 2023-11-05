@@ -8,7 +8,7 @@ const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
 
-   const toastId = toast.loading('Registering...!')
+   const toastId = toast.loading('Registering...')
 
 
     const name = e.target.name.value;

@@ -1,12 +1,43 @@
 /* eslint-disable react/no-unescaped-entities */
 import Lottie from "lottie-react";
 import loginAnimation from "../../assets/Lotties/loginEnimation.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { BiLogoGithub } from 'react-icons/bi';
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const navigate = useNavigate()
     
+  const {loginUser} = useAuth()
+
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const toastId = toast.loading('Loggin in...')
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    
+
+    loginUser(email, password)
+      .then((result) => {
+        toast.success('Login Successfully!', { id: toastId })
+        navigate('/')
+        console.log(result.user);
+      })
+      .catch((error) => {
+        toast.error( error.code , {id: toastId})
+      });
+  };
+
+
+
+
+
+
+
 
   return (
     <div className=" container mx-auto flex justify-center items-center gap-20">
@@ -21,7 +52,7 @@ const Login = () => {
                 Login your account
               </h3>
             </div>
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="flex flex-col gap-4 p-6">
                 <div className="relative h-11 w-full min-w-[200px]">
                   <input
