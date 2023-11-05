@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 const Login = () => {
   const navigate = useNavigate()
     
-  const {loginUser} = useAuth()
+  const {loginUser, loginWithGoogle, loginWithGithub} = useAuth()
 
 
   const handleLogin = (e) => {
@@ -32,6 +32,33 @@ const Login = () => {
       });
   };
 
+  const handleGoogleLogin = () => {
+    const toastId = toast.loading('Loggin in...')
+
+    loginWithGoogle()
+      .then((result) => {
+        console.log(result.user)
+        toast.success('Login Successfully!', { id: toastId })
+        navigate('/')
+
+      })
+      .catch((error) => {
+        toast.error( error.code , {id: toastId})
+      });
+  };
+  const handleGithubLogin = () => {
+    const toastId = toast.loading('Loggin in...')
+
+    loginWithGithub()
+      .then((result) => {
+        console.log(result.user);
+        toast.success('Login Successfully!', { id: toastId })
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error( error.code , {id: toastId})
+      });
+  };
 
 
 
@@ -94,10 +121,12 @@ const Login = () => {
             <h1 className="text-center font-medium text-lg -my-4">or</h1>
             <div className="flex flex-col space-y-2 px-6 mt-5">
               <button
+                onClick={handleGoogleLogin}
                 className="btn btn-outline btn-info normal-case">
                 <FcGoogle className="text-xl"></FcGoogle>Login With Google
               </button>
               <button
+                onClick={handleGithubLogin}
                 className="btn btn-outline normal-case">
                 <BiLogoGithub className="text-xl"></BiLogoGithub>Login With
                 Github
