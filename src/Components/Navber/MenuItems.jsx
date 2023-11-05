@@ -94,7 +94,11 @@ const MenuItems = () => {
                       </div>
                     </div>
                 </label>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-5 text-center shadow bg-base-100 rounded-box w-52">
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-5 text-center shadow bg-base-100 rounded-box w-52 space-y-3">
+                  <div>
+                  <h1 className="text-lg py-2">{displayName}</h1>
+                    <hr />
+                  </div>
                   <div onClick={handleLogout} className="flex items-center justify-center gap-2 text-lg text-gray-400 hover:text-black hover:cursor-pointer">
                   <p>logout</p>
                   <FaArrowRightToBracket ></FaArrowRightToBracket>
