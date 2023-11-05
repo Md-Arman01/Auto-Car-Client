@@ -7,6 +7,7 @@ import AddServices from "../Pages/AddServices/AddServices";
 import MySchedules from "../Pages/MySchedules/MySchedules";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import SingleServicesCard from "../Pages/Home/SingleServicesCard";
   
 const Router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const Router = createBrowserRouter([
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '/service/:id',
+          element: <SingleServicesCard></SingleServicesCard>
         },
       ]
     },

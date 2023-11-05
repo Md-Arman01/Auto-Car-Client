@@ -12,7 +12,7 @@ const Navber = () => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className="w-full navbar bg-[#00463E] px-10 lg:z-50">
+          <div className="w-full navbar bg-[#00463E] py-3 px-10 lg:z-50">
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"
@@ -31,9 +31,8 @@ const Navber = () => {
                 </svg>
               </label>
             </div>
-            <div className='flex-1 flex-col items-start'>
+            <div className="flex-1">
               <img className='w-20' src={logo} alt="" />
-              <h1 className='font-rancho text-2xl text-white'>BookFinder</h1>
             </div>
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
