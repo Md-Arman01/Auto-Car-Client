@@ -15,12 +15,7 @@ const Login = () => {
       </div>
       <div>
         <div className="flex justify-center mt-14 md:mt-20 lg:mt-28 px-5 md:px-0">
-          <div
-            data-aos="zoom-in"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="500"
-            className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+          <div className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="relative mx-4 -mt-6 mb-4 grid h-20 md:h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] bg-clip-border text-white shadow-lg shadow-[#54C2C3]/40">
               <h3 className="block font-rancho text-xl md:text-4xl  leading-snug tracking-normal text-white antialiased">
                 Login your account

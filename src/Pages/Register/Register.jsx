@@ -1,6 +1,49 @@
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
 
 const Register = () => {
+  const  {createUser} = useAuth()
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+   const toastId = toast.loading('Registering...!')
+
+
+    const name = e.target.name.value;
+    const photoURL = e.target.photoURL.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const checked = e.target.checkbox.checked;
+
+    if (password.length < 6) {
+      toast.error('Please give me minimum 6 characters' , {id: toastId})
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error('Please give me minimum one capital letter' , {id: toastId})
+      return;
+    } else if (!/[!@#$%^&*()_+~`\-={}[\]:;"'<>,.?/\\|]/.test(password)) {
+      toast.error('Please give me minimum one special character' , {id: toastId})
+      return;
+    } else if (!checked) {
+      toast.error('Please accept our Terms and Condition' , {id: toastId})
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        toast.success('Register Successfully!', { id: toastId })
+        console.log(result.user)
+        
+      })
+      .catch((error) => {
+        toast.error( error.code , {id: toastId})
+        console.log(error.message);
+      });
+  };
+
+
   return (
     <div className="flex justify-center items-center gap-20">
       <div>
@@ -13,18 +56,13 @@ const Register = () => {
       <div>
         <div>
           <div className=" flex justify-center mt-14 md:mt-20 lg:mt-28 px-5 md:px-0">
-            <div
-              data-aos="zoom-in"
-              data-aos-offset="200"
-              data-aos-delay="50"
-              data-aos-duration="500"
-              className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+            <div className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
               <div className="relative mx-4 -mt-6 mb-4 grid h-20 md:h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] bg-clip-border text-white shadow-lg shadow-[#54C2C3]/40">
                 <h3 className="block font-rancho text-xl md:text-4xl leading-snug tracking-normal text-white antialiased">
                   Register your account
                 </h3>
               </div>
-              <form>
+              <form onSubmit={handleRegister}>
                 <div className="flex flex-col gap-4 p-6">
                   <div className="relative h-11 w-full min-w-[200px]">
                     <input
