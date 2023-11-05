@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
 
 const ServicesCard = ({service}) => {
-    const {_id, 
-        services_img, services_name, services_description, provider_img, provider_name, price } = service || {}
+    const {_id, services_img, services_name, services_description, provider_img, provider_name, price } = service || {}
   return (
     <div >
 
@@ -14,10 +13,11 @@ const ServicesCard = ({service}) => {
         </div>
         <div className="p-5">
         <div className="mb-1">
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 mb-3">
             <img className=" w-14 h-14 rounded-full object-cover" src={provider_img} alt="" />
             <h1 className="text-gray-500">{provider_name}</h1>
             </div>
+            <hr/>
           </div>
           <h4 className=" block font-rancho text-4xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text leading-snug tracking-normal text-blue-gray-900 antialiased">
             {services_name}
@@ -32,7 +32,7 @@ const ServicesCard = ({service}) => {
             <p className="text-2xl font-semibold bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">${price}</p>
             </div>
 
-            <Link to={`/details/${_id}`}>
+            <Link to={`/service/${_id}`}>
               <button
                 className="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-rancho text-2xl  bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text transition-all hover:bg-[#FF4804]/10 active:bg-[#FF4804]/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="button">
