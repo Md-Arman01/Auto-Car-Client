@@ -11,7 +11,7 @@ const ServicesCard = ({service}) => {
         <div className="relative m-0 p-3 md:p-0 md:w-2/4 shrink-0 overflow-hidden rounded-xl md:rounded-r-none bg-white bg-clip-border text-gray-700">
           <img src={services_img} alt="image" className="h-full w-full rounded-xl md:rounded-none object-cover" />
         </div>
-        <div className="p-5">
+        <div className="p-5 w-full">
         <div className="mb-1">
             <div className="flex items-center gap-5 mb-3">
             <img className=" w-14 h-14 rounded-full object-cover" src={provider_img} alt="" />
@@ -23,7 +23,7 @@ const ServicesCard = ({service}) => {
             {services_name}
           </h4>
           <p className=" block text-sm font-normal leading-relaxed text-gray-500 antialiased h-32">
-            {services_description.slice(0, 99)}
+            {services_description?.slice(0, 99)}
           </p>
           
           <div className="flex items-center justify-between">

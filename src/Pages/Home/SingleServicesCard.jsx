@@ -13,7 +13,8 @@ const SingleServicesCard = () => {
 
   const { data: service } = useQuery({
     queryKey: ["service"],
-    queryFn: () => axiosSecure.get(`/services/${id}`),
+    queryFn: async () => {
+      return await axiosSecure.get(`/services/${id}`)},
   });
 
   const {
@@ -38,6 +39,8 @@ const SingleServicesCard = () => {
       services_img,
       services_name,
       provider_email,
+      provider_img,
+      provider_name,
       user_email: user?.email,
       instruction,
       price,

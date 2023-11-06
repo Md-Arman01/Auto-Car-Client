@@ -23,13 +23,13 @@ const PopularServices = () => {
     
     return (
         <div>
-            <div>
+            <div className="my-14">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-rancho font-semibold text-center">Popular <span className="bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">Services</span></h1>
                 <p className="text-sm text-gray-500 text-center mx-auto w-[650px] my-5">It is a cost-effective and flexible alternative to traditional taxi services, with options like Uber, Lyft, and others available in many locations.</p>
             </div>
             <div className="grid grid-cols-2 gap-5 container mx-auto">
             {
-                services?.data.slice(0, 4).map(service => <ServicesCard key={service._id} service={service}></ServicesCard>)
+                services?.data?.slice(0, 4).map(service => <ServicesCard key={service._id} service={service}></ServicesCard>)
             }
             </div>
             <button

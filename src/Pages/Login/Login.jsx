@@ -33,7 +33,7 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     const toastId = toast.loading('Loggin in...')
-
+    
     loginWithGoogle()
       .then((result) => {
         console.log(result.user)
@@ -47,7 +47,7 @@ const Login = () => {
   };
   const handleGithubLogin = () => {
     const toastId = toast.loading('Loggin in...')
-
+    
     loginWithGithub()
       .then((result) => {
         console.log(result.user);
