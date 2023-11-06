@@ -53,7 +53,7 @@ const MenuItems = () => {
           tabIndex={0}
           className="dropdown-content z-[1] menu shadow bg-base-100 rounded-box w-52 items-center space-y-3 py-5">
           <NavLink
-            to="/myServices"
+            to={`/myServices/${user?.email}`}
             className={({ isActive }) =>
               isActive
                 ? "text-black underline underline-offset-8 text-lg"

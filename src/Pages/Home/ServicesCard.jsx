@@ -22,7 +22,7 @@ const ServicesCard = ({service}) => {
           <h4 className=" block font-rancho text-4xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text leading-snug tracking-normal text-blue-gray-900 antialiased">
             {services_name}
           </h4>
-          <p className=" block text-sm font-normal leading-relaxed text-gray-500 antialiased mb-16">
+          <p className=" block text-sm font-normal leading-relaxed text-gray-500 antialiased h-32">
             {services_description.slice(0, 99)}
           </p>
           
