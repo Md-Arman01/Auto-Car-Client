@@ -3,6 +3,8 @@ import useAxios from "../../Hooks/useAxios";
 import { useParams } from "react-router-dom";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 import useAuth from "../../Hooks/useAuth";
+import { RxCross1 } from 'react-icons/rx';
+import toast from "react-hot-toast";
 
 const SingleServicesCard = () => {
     const {user} = useAuth()
@@ -24,6 +26,34 @@ const SingleServicesCard = () => {
     services_description,
     price,
   } = service?.data || {};
+
+
+  const handleBookService = (e)=> {
+    const toastId = toast.loading('Booking Pendding...')
+
+    e.preventDefault()
+    const form = e.target;
+    const date = form.date.value;
+    const instruction = form.instruction.value;
+    const booked = {
+        services_img,
+        services_name,
+        provider_email,
+        user_email: user?.email,
+        instruction,
+        price,
+        date,
+    }
+    axiosSecure.post('/booking', booked)
+    .then(res => {
+      if(res?.data?.insertedId){
+        toast.success('Booking Successfully!', { id: toastId })
+      }
+        console.log(res.data)
+    })
+    
+    form.reset()
+  }
 
   return (
     <div className="flex gap-8  container mx-auto">
@@ -99,8 +129,8 @@ const SingleServicesCard = () => {
                 </button>
                 <dialog
                   id="my_modal_5"
-                  className="modal modal-bottom sm:modal-middle]">
-                  <div className="modal-box mx-auto my-auto rounded-xl bg-[#e0feff] w-[700px]">
+                  className="modal modal-bottom">
+                  <div className="modal-box mx-auto my-auto rounded-xl bg-[#e0feff] lg:w-[700px]">
                     
 
                   <div className="container mx-auto my-10 lg:my-16 px-5 lg:px-0">
@@ -111,7 +141,7 @@ const SingleServicesCard = () => {
           </h1>
         </div>
 
-        <form>
+        <form onSubmit={handleBookService}>
           <h1 className="md:text-lg font-medium mb-2">Services Image</h1>
           <input
             placeholder={services_img}
@@ -165,34 +195,31 @@ const SingleServicesCard = () => {
               <h1 className="md:text-lg font-medium mb-2">Instruction</h1>
               <input
                 type="text"
-                name="description"
+                name="instruction"
                 required
-                placeholder="Enter Product Short Description"
+                placeholder="Enter Instruction"
                 className="input input-bordered w-full"
               />
             </div>
           </div>
 
-          <form method="dialog">
+
+          
           <input
             className="w-full mt-7 bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-white font-rancho mx-auto normal-case block select-none rounded-lg  py-3 px-6 text-center align-middle  text-2xl shadow-md shadow-[#00463E]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#54C2C3]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="submit"
             value="Purchase This Service"
             />
-          </form>
-
+            
           
         </form>
       </div>
     </div>
 
 
-
-
-                      {/* <form method="dialog">
-                        <button className="btn">Close</button>
-                      </form> */}
-
+                      <form className="absolute right-5 top-5" method="dialog">
+                        <button className="btn rounded-full bg-red-400 hover:bg-red-300"><RxCross1 className="text-base"></RxCross1></button>
+                      </form>
 
                   </div>
                 </dialog>
