@@ -1,9 +1,40 @@
 
 import { RxCross1 } from "react-icons/rx";
 import PropTypes from 'prop-types'
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+import useAxios from "../../Hooks/useAxios";
 
-const BookingCard = ({booking}) => {
-    const {services_img, services_name, date, instruction, provider_img, provider_name, price } = booking || {}
+const BookingCard = ({booking, bookings, setBookings}) => {
+    const {_id, services_img, services_name, date, instruction, provider_img, provider_name, price } = booking || {}
+    const axiosSecure = useAxios()
+
+
+    const handleDelete = (id)=>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You delete this booked service!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                const toastId = toast.loading('Deleting Book Service...')
+              axiosSecure.delete(`/booking/${id}`)
+              .then(res => {
+                if(res?.data?.deletedCount > 0){
+                    toast.success("Deleted Book Service!", { id: toastId }) 
+                    const remainingCard  = bookings.filter(service => service._id !== id) 
+                    setBookings(remainingCard)
+                  }
+              })
+            }
+          })
+    }
+
+
 
   return (
     <div>
@@ -52,7 +83,7 @@ const BookingCard = ({booking}) => {
           </div>
         </div>
           <div className="absolute -top-5 -right-5">
-                <button className="btn rounded-full bg-red-400 hover:bg-red-300">
+                <button onClick={()=>handleDelete(_id)} className="btn rounded-full bg-red-400 hover:bg-red-300">
                         <RxCross1 className="text-base"></RxCross1>
                 </button>
           </div>
@@ -63,5 +94,7 @@ const BookingCard = ({booking}) => {
 
 BookingCard.propTypes ={
     booking: PropTypes.object.isRequired,
+    bookings: PropTypes.array.isRequired,
+    setBookings: PropTypes.array.isRequired,
 }
 export default BookingCard;

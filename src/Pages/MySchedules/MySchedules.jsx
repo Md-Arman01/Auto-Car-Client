@@ -23,7 +23,7 @@ const MySchedules = () => {
       </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {
-          bookings?.map(booking => <BookingCard key={booking?._id} booking={booking}></BookingCard>)
+          bookings?.map(booking => <BookingCard key={booking?._id} booking={booking} bookings={bookings} setBookings={setBookings}></BookingCard>)
         }
 
         </div>
