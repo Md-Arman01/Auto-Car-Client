@@ -14,14 +14,13 @@ const PopularServices = () => {
         navigate('/services')
     }
     
-    const { data: services } = useQuery({
+    const { data: services} = useQuery({
         queryKey: ['services'],
         queryFn: () =>
         axiosSecure.get('/services')
       })
 
-
-
+    
     return (
         <div>
             <div>

@@ -56,7 +56,13 @@ const SingleServicesCard = () => {
   }
 
   return (
-    <div className="flex gap-8  container mx-auto">
+    <>
+    <div className="container mx-auto my-10">
+    <div>
+      <h1 className="text-5xl font-rancho font-semibold underline underline-offset-8 mb-12">Service <span className="bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">Provider</span></h1>
+      
+    </div>
+    <div className="flex gap-8">
       {/* provider */}
       <div>
         <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
@@ -231,6 +237,8 @@ const SingleServicesCard = () => {
         </div>
       </div>
     </div>
+    </div>
+    </>
   );
 };
 
