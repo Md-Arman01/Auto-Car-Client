@@ -1,25 +1,20 @@
-// import { useQuery } from "@tanstack/react-query";
-// import useAuth from "../../Hooks/useAuth";
-// import useAxios from "../../Hooks/useAxios";
 
-import { useLoaderData } from "react-router-dom";
-
+import useAuth from "../../Hooks/useAuth";
 import MyServicesCard from "./MyServicesCard";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const MyServices = () => {
-    const services = useLoaderData()
+    const {user} = useAuth()
+    
+    const [services, setServices] = useState([])
 
-    // const {user} = useAuth()
-    // const axiosSecure = useAxios()
-
-    // const {data} = useQuery({
-    //     queryKey: 'services',
-    //     queryFn: ()=> {
-    //         axiosSecure.get(`/services1/${user?.email}`)
-    //     }
-    // })
-    // console.log(data?.data)
-
+    useEffect(()=>{
+        fetch(`http://localhost:5000/services1/${user?.email}`)
+        .then(res => res.json())
+        .then(res => setServices(res))
+    },[user?.email])
+    
 
 
     return (
@@ -30,7 +25,7 @@ const MyServices = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 container mx-auto">
             {
-                services?.map(service => <MyServicesCard key={service._id} service={service}></MyServicesCard>)
+                services?.map(service => <MyServicesCard key={service._id} service={service} services={services} setServices={setServices}></MyServicesCard>)
             }
         </div>
             </div>

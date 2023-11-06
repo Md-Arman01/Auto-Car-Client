@@ -1,10 +1,39 @@
 import PropTypes from 'prop-types'
 import { Link} from 'react-router-dom';
+import Swal from 'sweetalert2';
+import useAxios from '../../Hooks/useAxios';
+import toast from 'react-hot-toast';
 
 
-const MyServicesCard = ({service}) => {
+const MyServicesCard = ({service, services, setServices}) => {
     const {_id, services_img, services_name, services_description, provider_img, provider_name, price } = service || {}
+    const axiosSecure = useAxios()
 
+
+    const handleDelete = (id) =>{
+        
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You delete this service!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                const toastId = toast.loading('Deleting Service...')
+              axiosSecure.delete(`/services/${id}`)
+              .then(res => {
+                if(res?.data?.deletedCount > 0){
+                    toast.success("Deleted Service!", { id: toastId }) 
+                    const remainingCard  = services.filter(service => service._id !== id) 
+                    setServices(remainingCard)
+                  }
+              })
+            }
+          })
+    }
 
     return (
         <div>
@@ -43,6 +72,7 @@ const MyServicesCard = ({service}) => {
                 </button>
                 </Link>
                 <button
+                  onClick={()=>handleDelete(_id)}
                   className="normal-case block w-full select-none rounded-lg bg-gradient-to-tr from-[#54C2C3] to-[#00463E] py-3 px-6 text-center align-middle font-rancho text-xl   text-white shadow-md shadow-[#54C2C3]/20 transition-all hover:shadow-lg hover:shadow-[#54C2C3]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                   >
                   Delete
@@ -56,5 +86,8 @@ const MyServicesCard = ({service}) => {
 
 MyServicesCard.propTypes = {
     service: PropTypes.object.isRequired,
+    services: PropTypes.array.isRequired,
+    setServices: PropTypes.array.isRequired,
+
 }
 export default MyServicesCard;

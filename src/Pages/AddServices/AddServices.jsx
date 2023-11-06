@@ -1,10 +1,8 @@
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
-import { useNavigate } from "react-router-dom";
 
 const AddServices = () => {
-  const navigate = useNavigate()
     const {user} = useAuth()
     const axiosSecure = useAxios()
 
@@ -34,7 +32,6 @@ const AddServices = () => {
         .then(res => {
             if(res?.data?.insertedId){
                 form.reset()
-                navigate('/')
                 toast.success('Service Added!', { id: toastId })
 
             }

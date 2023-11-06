@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import SingleServicesCard from "../Pages/Home/SingleServicesCard";
 import UpdateServicesCard from "../Pages/MyServices/UpdateServicesCard";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
   
 const Router = createBrowserRouter([
     {
@@ -24,10 +25,8 @@ const Router = createBrowserRouter([
           element: <Services></Services>
         },
         {
-          // path: '/myServices',
-          path: '/myServices/:email',
-          element: <MyServices></MyServices>,
-          loader: ({params}) => fetch(`http://localhost:5000/services1/${params.email}`)
+          path: '/myServices',
+          element: <PrivateRoute><MyServices></MyServices></PrivateRoute>,
           
         },
         {
@@ -48,7 +47,7 @@ const Router = createBrowserRouter([
         },
         {
           path: '/service/:id',
-          element: <SingleServicesCard></SingleServicesCard>
+          element: <PrivateRoute><SingleServicesCard></SingleServicesCard></PrivateRoute>
         },
         {
           path: '/update/:id',

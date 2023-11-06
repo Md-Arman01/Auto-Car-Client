@@ -4,9 +4,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 const UpdateServicesCard = () => {
+    const navigate = useNavigate()
      const axiosSecure = useAxios()
     const {id} = useParams()
-    const navigate = useNavigate()
 
     const { data: service } = useQuery({
         queryKey: ["service"],
@@ -44,13 +44,13 @@ const UpdateServicesCard = () => {
         axiosSecure.put(`/services/${id}`, updateService)
         .then(res => {
             if(res?.data?.modifiedCount > 0){
+                navigate(-1)
                 form.reset()
-                navigate('/')
                 toast.success("Updated Service!", { id: toastId });
             }
         })    
-    
-
+        
+        
         
         
     }
@@ -61,7 +61,7 @@ const UpdateServicesCard = () => {
             <div className="container mx-auto my-7 lg:my-16 px-5 lg:px-0">
           <div className="card flex-1 mb-7 bg-[#e0feff] border shadow-md p-5 md:p-12 rounded-md overflow-x-clip">
             <div>
-              <h1 className="text-[#3D506E] text-3xl lg:text-4xl text-center font-rancho font-semibold mb-3 bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
+              <h1 className="text-[#3D506E] text-3xl lg:text-4xl text-center font-rancho font-semibold mb-3 bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">
                 Update Service
               </h1>
               <p className="text-center mx-auto lg:w-[900px] text-[#969494] mb-3 lg:mb-0">
