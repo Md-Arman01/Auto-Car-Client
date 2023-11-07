@@ -10,11 +10,13 @@ import Register from "../Pages/Register/Register";
 import SingleServicesCard from "../Pages/Home/SingleServicesCard";
 import UpdateServicesCard from "../Pages/MyServices/UpdateServicesCard";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
   
 const Router = createBrowserRouter([
     {
       path: "/",
       element: <Layout></Layout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: '/',
