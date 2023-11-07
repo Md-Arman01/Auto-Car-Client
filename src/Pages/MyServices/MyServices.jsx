@@ -2,6 +2,7 @@ import useAuth from "../../Hooks/useAuth";
 import MyServicesCard from "./MyServicesCard";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { ImCancelCircle } from 'react-icons/im';
 
 const MyServices = () => {
@@ -10,13 +11,16 @@ const MyServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services1/${user?.email}`)
+    fetch(`http://localhost:5000/services1/${user?.email}` ,{credentials: 'include'})
       .then((res) => res.json())
       .then((res) => setServices(res));
   }, [user?.email]);
 
   return (
     <>
+    <Helmet>
+      <title>Auto Car | My Services</title>
+    </Helmet>
       <div className="my-12">
         {
             services.length > 0 ?

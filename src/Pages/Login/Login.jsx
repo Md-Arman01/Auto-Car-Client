@@ -6,6 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { BiLogoGithub } from 'react-icons/bi';
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -67,6 +68,9 @@ const Login = () => {
 
   return (
     <div className=" container mx-auto flex justify-center items-center gap-20">
+      <Helmet>
+        <title>Auto Car | Login</title>
+      </Helmet>
       <div>
         <Lottie className="w-[700px]" animationData={loginAnimation}></Lottie>
       </div>

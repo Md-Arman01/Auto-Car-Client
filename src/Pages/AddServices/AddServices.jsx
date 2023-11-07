@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
+import { Helmet } from "react-helmet-async";
 
 const AddServices = () => {
     const {user} = useAuth()
@@ -43,6 +44,9 @@ const AddServices = () => {
 
     return (
         <div className="container mx-auto my-10 lg:my-16 px-5 lg:px-0">
+          <Helmet>
+            <title>Auto Car | Add Services</title>
+          </Helmet>
       <div className="card flex-1 mb-7 bg-[#e0feff] border shadow-md p-5 md:p-12 rounded-md overflow-x-hidden">
         <div>
           <h1 className="bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text text-3xl md:text-4xl lg:text-5xl text-center font-rancho font-semibold mb-3">

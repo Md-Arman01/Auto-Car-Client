@@ -4,9 +4,11 @@ import { FiMenu } from 'react-icons/fi';
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { FaArrowRightToBracket } from 'react-icons/fa6'
+import useAxios from "../../Hooks/useAxios";
 
 const Navber = () => {
     const {user, logoutUser} = useAuth()
+    const axiosSecure = useAxios()
     const {displayName, photoURL} = user || {}
     const menuItems = <div  className="flex flex-col lg:flex-row justify-center items-center gap-5">
       <NavLink
@@ -77,6 +79,11 @@ const Navber = () => {
       .then(() => {
         toast.success('LogOut Successfully!', { id: toastId })
         // Sign-out successful.
+        const userEmail = { email: user?.email };
+        axiosSecure.post("/logout",userEmail)
+          .then((res) => {
+            console.log(res.data);
+          });
       }).catch((error) => {
         toast.error( error.code , {id: toastId})
         // An error happened.

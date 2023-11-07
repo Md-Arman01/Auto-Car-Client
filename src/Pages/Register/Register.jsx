@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/Firebase.confiq";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const navigate = useNavigate()
@@ -63,6 +64,9 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center gap-20">
+      <Helmet>
+        <title>Auto Car | Register</title>
+      </Helmet>
       <div>
         <img
           className="w-[700px]"

@@ -2,6 +2,7 @@ import toast from "react-hot-toast";
 import useAxios from "../../Hooks/useAxios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet-async";
 
 const UpdateServicesCard = () => {
     const navigate = useNavigate()
@@ -58,6 +59,9 @@ const UpdateServicesCard = () => {
 
     return (
         <div>
+          <Helmet>
+            <title>Auto Car | Update</title>
+          </Helmet>
             <div className="container mx-auto my-7 lg:my-16 px-5 lg:px-0">
           <div className="card flex-1 mb-7 bg-[#e0feff] border shadow-md p-5 md:p-12 rounded-md overflow-x-clip">
             <div>

@@ -3,6 +3,7 @@ import useAxios from "../../Hooks/useAxios";
 import AllServicesCard from "./AllServicesCard";
 import { useState } from "react";
 import SearchCard from "./SearchCard";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -31,6 +32,9 @@ const Services = () => {
 
   return (
     <div className="container mx-auto">
+      <Helmet>
+        <title>Auto Car | Services</title>
+      </Helmet>
       <div className=" mt-11 px-60">
         <form onSubmit={handleSearch}>
           <div className="input-group">
@@ -91,6 +95,7 @@ const Services = () => {
       </button>
         </div>
       }
+      
         
     </div>
   );

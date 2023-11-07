@@ -4,6 +4,7 @@ import { useState } from "react";
 import BookingCard from "./BookingCard";
 import MyPenddingService from "./MyPenddingService";
 import { ImCancelCircle } from 'react-icons/im';
+import { Helmet } from "react-helmet-async";
 
 const MySchedules = () => {
   const { user } = useAuth();
@@ -11,19 +12,22 @@ const MySchedules = () => {
   const [penddingServices, setPenddingServices] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/booking/${user?.email}`)
+    fetch(`http://localhost:5000/booking/${user?.email}`, {credentials: 'include'})
       .then((res) => res.json())
       .then((res) => setBookings(res));
   }, [user?.email]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/booking1/${user?.email}`)
+    fetch(`http://localhost:5000/booking1/${user?.email}`, {credentials: 'include'})
       .then((res) => res.json())
       .then((res) => setPenddingServices(res));
   }, [user?.email]);
 
   return (
     <div className="container mx-auto">
+      <Helmet>
+        <title>Auto Car | My Schedules</title>
+      </Helmet>
       {/* my booking services */}
       
       {

@@ -7,6 +7,7 @@ import { RxCross1 } from "react-icons/rx";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import ProviderOtherServiceCard from "./ProviderOtherServiceCard";
+import { Helmet } from "react-helmet-async";
 
 const SingleServicesCard = () => {
   const [providerServices, setProviderServices] = useState([]);
@@ -75,6 +76,9 @@ const SingleServicesCard = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Auto Car | service</title>
+    </Helmet>
       <div className="container mx-auto my-10">
         <div>
           <h1 className="text-5xl font-rancho font-semibold underline underline-offset-8 mb-12">
