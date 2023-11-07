@@ -29,7 +29,8 @@ const PopularServices = () => {
             </div>
             <div className="grid grid-cols-2 gap-5 container mx-auto">
             {
-                services?.data?.slice(0, 4).map(service => <ServicesCard key={service._id} service={service}></ServicesCard>)
+                // services?.data?.slice(0, 4).map(service => <ServicesCard key={service._id} service={service}></ServicesCard>)
+                services?.data?.map(service => <ServicesCard key={service._id} service={service}></ServicesCard>)
             }
             </div>
             <button
