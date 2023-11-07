@@ -31,11 +31,11 @@ const Router = createBrowserRouter([
         },
         {
           path: '/addServices',
-          element: <AddServices></AddServices>
+          element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
         },
         {
           path: '/mySchedules',
-          element: <MySchedules></MySchedules>
+          element: <PrivateRoute><MySchedules></MySchedules></PrivateRoute> 
         },
         {
           path: '/login',
@@ -51,7 +51,7 @@ const Router = createBrowserRouter([
         },
         {
           path: '/update/:id',
-          element: <UpdateServicesCard></UpdateServicesCard>
+          element: <PrivateRoute><UpdateServicesCard></UpdateServicesCard></PrivateRoute>
         },
       ]
     },

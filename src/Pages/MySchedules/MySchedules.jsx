@@ -3,6 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
 import BookingCard from "./BookingCard";
 import MyPenddingService from "./MyPenddingService";
+import { ImCancelCircle } from 'react-icons/im';
 
 const MySchedules = () => {
   const { user } = useAuth();
@@ -24,7 +25,11 @@ const MySchedules = () => {
   return (
     <div className="container mx-auto">
       {/* my booking services */}
-      <div className="flex justify-center mt-10">
+      
+      {
+        bookings.length > 0 ?
+        <div>
+          <div className="flex justify-center mt-10">
         <h1 className="text-5xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-12">
           My Booking Services: {bookings.length}
         </h1>
@@ -32,16 +37,32 @@ const MySchedules = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {bookings?.map((booking) => (
           <BookingCard
-            key={booking?._id}
-            booking={booking}
-            bookings={bookings}
-            setBookings={setBookings}></BookingCard>
-        ))}
+          key={booking?._id}
+          booking={booking}
+          bookings={bookings}
+          setBookings={setBookings}></BookingCard>
+          ))}
       </div>
+        </div>
+      :
+      <div className="flex flex-col items-center justify-center my-64 gap-5">
+              <h1 className="font-rancho text-3xl md:text-4xl lg:text-6xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">Booking Service Not Found</h1>
+              <ImCancelCircle className="text-3xl md:text-4xl lg:text-5xl text-[#54C2C3]"></ImCancelCircle>
+      </div>
+
+
+      }
       {/* --------------- */}
+      <div className="flex justify-center gap-10 my-32">
+        <p className="border w-20 md:w-[150px] lg:w-[250px]"></p>
+        <p className="border w-20 md:w-[150px] lg:w-[250px]"></p>
+
+      </div>
       {/* my pendding services */}
+      {
+        penddingServices.length > 0 ?
       <div>
-        <h1 className="text-5xl text-center bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold my-12">
+        <h1 className="text-5xl text-center bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-12">
           My Pendding Services: {penddingServices.length}
         </h1>
         <div>
@@ -64,6 +85,13 @@ const MySchedules = () => {
           </div>
         </div>
       </div>
+      :
+      <div className="flex flex-col items-center justify-center my-64 gap-5">
+              <h1 className="font-rancho text-3xl md:text-4xl lg:text-6xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">Pendding Service Not Found</h1>
+              <ImCancelCircle className="text-3xl md:text-4xl lg:text-5xl text-[#54C2C3]"></ImCancelCircle>
+      </div>
+        
+      }
       {/* -------- */}
     </div>
   );
