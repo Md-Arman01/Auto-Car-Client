@@ -5,8 +5,11 @@ import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 import useAuth from "../../Hooks/useAuth";
 import { RxCross1 } from "react-icons/rx";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+import ProviderOtherServiceCard from "./ProviderOtherServiceCard";
 
 const SingleServicesCard = () => {
+  const [providerServices, setProviderServices] = useState([]);
   const { user } = useAuth();
   const axiosSecure = useAxios();
   const { id } = useParams();
@@ -18,6 +21,7 @@ const SingleServicesCard = () => {
   });
 
   const {
+    _id,
     provider_img,
     provider_name,
     provider_email,
@@ -27,6 +31,19 @@ const SingleServicesCard = () => {
     services_description,
     price,
   } = service?.data || {};
+
+  
+  // --------
+  useEffect(() => {
+    fetch(`http://localhost:5000/services1/${provider_email}`)
+      .then((res) => res.json())
+      .then((res) => setProviderServices(res));
+  }, [provider_email]);
+
+  const remainning = providerServices?.filter(service => service._id !== _id)
+  console.log(remainning)
+  // --------
+
 
   const handleBookService = (e) => {
     const toastId = toast.loading("Booking Pendding...");
@@ -249,6 +266,14 @@ const SingleServicesCard = () => {
             </div>
           </div>
         </div>
+        {/* provider other services */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10 ">
+
+        {
+          remainning?.map(item => <ProviderOtherServiceCard key={item._id} item={item}></ProviderOtherServiceCard>)
+        }
+        </div>
+        {/*  */}
       </div>
     </>
   );
