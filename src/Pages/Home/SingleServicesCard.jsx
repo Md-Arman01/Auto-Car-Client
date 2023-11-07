@@ -70,7 +70,7 @@ const SingleServicesCard = () => {
         <div className="flex gap-8">
           {/* provider */}
           <div>
-            <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+            <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border hover:shadow-2xl hover:shadow-[#00463E]">
               <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-80 rounded-xl bg-clip-border">
                 <img
                   src={provider_img}
@@ -95,15 +95,15 @@ const SingleServicesCard = () => {
           </div>
           {/* service card */}
           <div>
-            <div className="container mx-auto px-4 lg:px-0">
+            <div className="container mx-auto px-4 lg:px-0 hover:shadow-2xl hover:shadow-[#00463E]">
               <div className="lg:flex gap-5 rounded-lg bg-base-100 shadow-xl px-4 lg:px-0">
                 <img
                   className="lg:w-[700px] lg:h-[600px] my-5 lg:my-0 mx-auto object-cover rounded-xl md:rounded-lg"
                   src={services_img}
                   alt=""
                 />
-                <div className="flex items-center justify-center">
-                  <div className="space-y-2 md:space-y-5 px-1 lg:px-5 mt-2 lg:mt-0 mb-6 lg:mb-0">
+                <div className="flex items-center md:w-[500px]">
+                  <div className="space-y-2 md:space-y-5 px-1 lg:px-5 mt-2 lg:mt-0 mb-6 lg:mb-0  w-full">
                     <div className="mb-1">
                       <div className="flex items-center justify-center gap-5 mb-4">
                         <img
@@ -120,8 +120,8 @@ const SingleServicesCard = () => {
                     <h2 className="text-2xl md:text-4xl lg:text-6xl  font-rancho font-medium bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">
                       {services_name}
                     </h2>
-                    <p className="text-base text-gray-500">
-                      {services_description}
+                    <p className="text-base text-gray-500 md:h-48">
+                      {services_description?.slice(0, 300)}
                     </p>
                     <div>
                       <p className="text-gray-500">For 1 Passenger</p>

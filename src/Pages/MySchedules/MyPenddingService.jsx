@@ -41,9 +41,9 @@ const MyPenddingService = ({ penddingService, penddingServices , setPenddingServ
     <div>
       <hr className='mb-3' />
     <div className="flex items-center justify-between">
-      <div className=" flex-1">
+      <div className="flex-1 ">
         <img
-          className="w-40 h-32 rounded-lg"
+          className="w-40 h-32 rounded-lg hover:shadow-lg hover:shadow-[#00463E]"
           src={services_img}
           alt=""
           />

@@ -45,10 +45,7 @@ const AuthProvider = ({children}) => {
         logoutUser,
         loginWithGoogle,
         loginWithGithub,
-        loading
-
-
-
+        loading,
 
     }
 
