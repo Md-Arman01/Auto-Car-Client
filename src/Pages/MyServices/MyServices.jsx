@@ -12,7 +12,7 @@ const MyServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services1/${user?.email}` ,{credentials: 'include'})
+    fetch(`https://assignment-11-server-phi-one.vercel.app/services1/${user?.email}` ,{credentials: 'include'})
       .then((res) => res.json())
       .then((res) => setServices(res));
   }, [user?.email]);

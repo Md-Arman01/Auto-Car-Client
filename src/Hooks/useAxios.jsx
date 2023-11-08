@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://assignment-11-server-phi-one.vercel.app',
     withCredentials: true,
   });
 

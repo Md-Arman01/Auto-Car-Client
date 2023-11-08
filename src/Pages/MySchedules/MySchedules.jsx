@@ -14,7 +14,7 @@ const MySchedules = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/booking/${user?.email}`,
+      `https://assignment-11-server-phi-one.vercel.app/booking/${user?.email}`,
       { credentials: "include" }
     )
       .then((res) => res.json())
@@ -23,7 +23,7 @@ const MySchedules = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/booking1/${user?.email}`,
+      `https://assignment-11-server-phi-one.vercel.app/booking1/${user?.email}`,
       { credentials: "include" }
     )
       .then((res) => res.json())

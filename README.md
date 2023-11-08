@@ -1,8 +1,14 @@
-# React + Vite
+# AutoCar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Live Link:
+ - https://book-finder-a4e89.web.app
 
-Currently, two official plugins are available:
+# Added at least 5 Project features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Answers:
+ - My Autocar website customer through serves a wide range of purposes to provide mobility assistance.
+ - My AutoCar website has introduced an online registration system so that participants can easily sign up and view all the features.
+ - My AutoCar website is a platform designed to simplify the customer's work and support process for various reasons.
+ - My Autocar website describes various interesting services including location, purpose and information about any particular service. Images are used to make the website more attractive.
+ - My AutoCar website is fully responsive and accessible on various devices, including smartphones and tablets. Many donors browse and donate on mobile devices, so a mobile-friendly design is crucial for reaching a wider audience.
+

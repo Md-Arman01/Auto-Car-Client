@@ -37,7 +37,7 @@ const SingleServicesCard = () => {
   
   // --------
   useEffect(() => {
-    fetch(`http://localhost:5000/services1/${provider_email}`)
+    fetch(`https://assignment-11-server-phi-one.vercel.app/services1/${provider_email}`)
       .then((res) => res.json())
       .then((res) => setProviderServices(res));
   }, [provider_email]);

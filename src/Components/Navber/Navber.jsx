@@ -102,7 +102,7 @@ const Navber = () => {
             </label>
             <ul
               tabIndex={0}
-              className="flex flex-col gap-2 dropdown-content mt-3 z-[1] py-4 px-5  shadow bg-gray-100 rounded-box w-52">
+              className="flex flex-col gap-2 dropdown-content mt-3 z-[1] py-4 px-5  shadow text-black bg-gray-100 rounded-box w-52">
               
               {menuItems}
             </ul>
