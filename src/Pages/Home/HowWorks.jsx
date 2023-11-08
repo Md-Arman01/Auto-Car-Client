@@ -1,8 +1,22 @@
+import { Typewriter } from 'react-simple-typewriter'
+
+
+
 const HowWorks = () => {
+
   return (
     <div>
-      <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-rancho mt-10 lg:mt-0">
-        How It Works
+      <h1 className="App text-center text-4xl md:text-5xl lg:text-6xl font-rancho mt-10 lg:mt-0">
+      How It
+      <Typewriter
+            words={[' Works']}
+            loop={100}
+            cursor
+            cursorStyle=''
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
       </h1>
       <hr className="w-28 mx-auto my-3 " />
      

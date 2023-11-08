@@ -1,4 +1,6 @@
+
 import { FiPhoneCall } from 'react-icons/fi';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Location = () => {
   return (
@@ -12,7 +14,18 @@ const Location = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-32 py-10 lg:py-0 px-7 lg:px-0">
           <div>
-            <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold">We Have Now <span className="text-orange-500">2000</span> Locations</h1>
+            <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold">We Have Now <span className="text-orange-500">
+              
+              <Typewriter
+            words={['2000 Locations']}
+            loop={100}
+            cursor
+            cursorStyle=''
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+              </span></h1>
             <p className="text-base text-gray-200  my-3 md:w-[650px]">
             locations is a brief statement indicating that a particular entity, organization, or system has expanded to encompass 2,000 distinct geographic points or places.
             </p>
@@ -44,7 +57,9 @@ const Location = () => {
           </div>
           <div className='flex gap-2 md:gap-10 items-end'>
             <div>
-                <h1 className='text-2xl md:text-3xl lg:text-5xl text-orange-500'>1470</h1>
+                <h1 className='text-2xl md:text-3xl lg:text-5xl text-orange-500'>
+                  1470
+                  </h1>
                 <p className='text-gray-200 mt-3'>Rental Cars Fleet</p>
             </div>
             <div>

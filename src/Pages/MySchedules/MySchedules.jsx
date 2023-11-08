@@ -6,6 +6,7 @@ import MyPenddingService from "./MyPenddingService";
 import { ImCancelCircle } from "react-icons/im";
 import { Helmet } from "react-helmet-async";
 import Footer from "../Home/Footer";
+import { Typewriter } from "react-simple-typewriter";
 
 const MySchedules = () => {
   const { user } = useAuth();
@@ -42,7 +43,16 @@ const MySchedules = () => {
         <div>
           <div className="flex justify-center mt-5 md:mt-10">
             <h1 className="text-3xl md:text-5xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-5 md:mb-12">
-              My Booking Services: {bookings.length}
+            My Booking
+              <Typewriter
+            words={[` Services: ${bookings.length}`]}
+            loop={100}
+            cursor
+            cursorStyle=''
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
             </h1>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 px-5 lg:px-0 ">
@@ -72,7 +82,16 @@ const MySchedules = () => {
       {penddingServices.length > 0 ? (
         <div>
           <h1 className="text-3xl  md:text-5xl text-center bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-5 md:mb-12">
-            My Pendding Services: {penddingServices.length}
+          My Pendding
+            <Typewriter
+            words={[` Services: ${penddingServices.length}`]}
+            loop={100}
+            cursor
+            cursorStyle=''
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
           </h1>
           <div>
             <div className="px-5 lg:px-0">

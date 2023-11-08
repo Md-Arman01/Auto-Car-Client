@@ -5,6 +5,7 @@ import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/Firebase.confiq";
 import { Helmet } from "react-helmet-async";
 import Footer from "../Home/Footer";
+import { Typewriter } from "react-simple-typewriter";
 
 const Register = () => {
   const navigate = useNavigate()
@@ -82,7 +83,16 @@ const Register = () => {
             <div className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
               <div className="relative mx-4 -mt-6 mb-4 grid h-20 md:h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] bg-clip-border text-white shadow-lg shadow-[#54C2C3]/40">
                 <h3 className="block font-rancho text-xl md:text-4xl leading-snug tracking-normal text-white antialiased">
-                  Register your account
+                Register
+                  <Typewriter
+            words={[' your account']}
+            loop={100}
+            cursor
+            cursorStyle=''
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
                 </h3>
               </div>
               <form onSubmit={handleRegister}>

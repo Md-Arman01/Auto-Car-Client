@@ -1,3 +1,4 @@
+import { Typewriter } from "react-simple-typewriter";
 
 
 const AboutUs = () => {
@@ -5,7 +6,18 @@ const AboutUs = () => {
     <div className="container mx-auto  flex flex-col-reverse lg:flex-row items-center justify-between px-7 lg:px-0">
 
     <div>
-        <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold">About Auto Car</h1>
+        <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold">
+        About
+          <Typewriter
+            words={[' Auto Car']}
+            loop={100}
+            cursor
+            cursorStyle=''
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+          </h1>
         <hr className="w-28 mt-2 " />
       
         {/* 1 */}

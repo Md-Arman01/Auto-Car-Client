@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import ProviderOtherServiceCard from "./ProviderOtherServiceCard";
 import { Helmet } from "react-helmet-async";
 import Footer from "./Footer";
+import { Typewriter } from "react-simple-typewriter";
 
 const SingleServicesCard = () => {
   const [providerServices, setProviderServices] = useState([]);
@@ -85,7 +86,16 @@ const SingleServicesCard = () => {
           <h1 className="text-3xl md:text-5xl font-rancho font-semibold underline underline-offset-8 mb-12 px-5 lg:px-0">
             Service{" "}
             <span className="bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">
-              Provider
+              
+              <Typewriter
+            words={['Provider']}
+            loop={100}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
             </span>
           </h1>
         </div>

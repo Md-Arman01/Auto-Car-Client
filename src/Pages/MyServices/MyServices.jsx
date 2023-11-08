@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { ImCancelCircle } from 'react-icons/im';
 import Footer from "../Home/Footer";
+import { Typewriter } from "react-simple-typewriter";
 
 const MyServices = () => {
   const { user } = useAuth();
@@ -28,7 +29,16 @@ const MyServices = () => {
             <div>
         <div className="flex justify-center">
           <h1 className="text-3xl md:text-5xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-5 md:mb-12">
-            My Services: {services.length}
+          My Services:
+            <Typewriter
+            words={[` ${services.length}`]}
+            loop={100}
+            cursor
+            cursorStyle=''
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
           </h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-5 lg:px-0 container mx-auto">

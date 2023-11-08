@@ -3,6 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 import { Helmet } from "react-helmet-async";
 import Footer from "../Home/Footer";
+import { Typewriter } from "react-simple-typewriter";
 
 const AddServices = () => {
     const {user} = useAuth()
@@ -52,7 +53,16 @@ const AddServices = () => {
       <div className="card flex-1 mb-7 bg-[#e0feff] border shadow-md p-5 md:p-12 rounded-md overflow-x-hidden">
         <div>
           <h1 className="bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text text-3xl md:text-4xl lg:text-5xl text-center font-rancho font-semibold mb-3">
-            Add Service
+          Add
+            <Typewriter
+            words={[' Service']}
+            loop={100}
+            cursor
+            cursorStyle=''
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
           </h1>
           <p className="text-center mx-auto  lg:w-[900px] text-[#969494] mb-2 lg:mb-2">
             However, I will need more information about the specific Service you
