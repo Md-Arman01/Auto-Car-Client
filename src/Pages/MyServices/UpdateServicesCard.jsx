@@ -11,7 +11,10 @@ const UpdateServicesCard = () => {
 
     const { data: service } = useQuery({
         queryKey: ["service"],
-        queryFn: () => axiosSecure.get(`/services/${id}`),
+        queryFn: async() =>{
+        return await  axiosSecure.get(`/services/${id}`)
+          
+        } 
       });
       const {
           services_img,
