@@ -4,6 +4,7 @@ import PopularServices from "./PopularServices";
 import HowWorks from "./HowWorks";
 import AboutUs from "./AboutUs";
 import Location from "./Location";
+import DownLoadApp from "./DownLoadApp";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <PopularServices></PopularServices>
             <AboutUs></AboutUs>
             <Location></Location>
+            <DownLoadApp></DownLoadApp>
         </div>
     );
 };

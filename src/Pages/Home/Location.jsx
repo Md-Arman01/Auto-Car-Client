@@ -4,7 +4,7 @@ const Location = () => {
   return (
     <div>
       <div
-        className="hero h-[450px]"
+        className="hero h-[450px] my-10"
         style={{
           backgroundImage:
             "url(https://i.ibb.co/2YKW2vZ/replicate-prediction-tkfhktrbc7xirtz6z4wxs7w6xy.png)",
