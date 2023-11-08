@@ -50,7 +50,7 @@ const AddServices = () => {
           <Helmet>
             <title>Auto Car | Add Services</title>
           </Helmet>
-      <div className="card flex-1 mb-7 bg-[#e0feff] border shadow-md p-5 md:p-12 rounded-md overflow-x-hidden">
+      <div className="card flex-1 mb-7  dark:bg-slate-700 bg-[#e0feff] border shadow-md p-5 md:p-12 rounded-md overflow-x-hidden">
         <div>
           <h1 className="bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text text-3xl md:text-4xl lg:text-5xl text-center font-rancho font-semibold mb-3">
           Add
@@ -64,7 +64,7 @@ const AddServices = () => {
             delaySpeed={1000}
           />
           </h1>
-          <p className="text-center mx-auto  lg:w-[900px] text-[#969494] mb-2 lg:mb-2">
+          <p className="text-center mx-auto  lg:w-[900px] text-[#969494] dark:text-gray-300 mb-2 lg:mb-2">
             However, I will need more information about the specific Service you
             have in mind. Please provide details about the Service, its
             category, and any unique features or benefits you did like to
@@ -73,7 +73,7 @@ const AddServices = () => {
         </div>
 
         <form onSubmit={handleAddService}>
-          <h1 className="md:text-lg font-medium mb-2">Service PhotoURL</h1>
+          <h1 className="md:text-lg font-medium mb-2 dark:text-white">Service PhotoURL</h1>
           <input
             type="text"
             name="servicePhotoURL"
@@ -83,7 +83,7 @@ const AddServices = () => {
           />
           <div className="grid grid-cols-2 gap-5 my-5">
             <div>
-              <h1 className="md:text-lg font-medium mb-2">Service Name</h1>
+              <h1 className="md:text-lg font-medium mb-2 dark:text-white">Service Name</h1>
               <input
                 type="text"
                 name="serviceName"
@@ -93,7 +93,7 @@ const AddServices = () => {
               />
             </div>
             <div>
-            <h1 className="md:text-lg font-medium mb-2">Price</h1>
+            <h1 className="md:text-lg font-medium mb-2 dark:text-white">Price</h1>
               <input
                 type="text"
                 name="price"
@@ -103,7 +103,7 @@ const AddServices = () => {
               />
             </div>
             <div>
-            <h1 className="md:text-lg font-medium mb-2">Location</h1>
+            <h1 className="md:text-lg font-medium mb-2 dark:text-white" >Location</h1>
               <input
                 type="text"
                 name="location"
@@ -113,7 +113,7 @@ const AddServices = () => {
               />
             </div>
             <div>
-              <h1 className="md:text-lg font-medium mb-2">Description</h1>
+              <h1 className="md:text-lg font-medium mb-2 dark:text-white">Description</h1>
               <input
                 type="text"
                 name="description"

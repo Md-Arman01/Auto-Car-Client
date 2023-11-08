@@ -29,9 +29,9 @@ const MyServices = () => {
             <div>
         <div className="flex justify-center">
           <h1 className="text-3xl md:text-5xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-5 md:mb-12">
-          My Services:
+          My
             <Typewriter
-            words={[` ${services.length}`]}
+            words={[` Services: ${services.length}`]}
             loop={100}
             cursor
             cursorStyle=''
