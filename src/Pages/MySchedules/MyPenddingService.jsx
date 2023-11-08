@@ -43,14 +43,14 @@ const MyPenddingService = ({ penddingService, penddingServices , setPenddingServ
     <div className="flex items-center justify-between">
       <div className="flex-1 ">
         <img
-          className="w-40 h-32 rounded-lg hover:shadow-lg hover:shadow-[#00463E]"
+          className="md:w-40 md:h-32 rounded-lg hover:shadow-lg hover:shadow-[#00463E]"
           src={services_img}
           alt=""
           />
-        <h1 className='text-xl font-semibold my-2'>{services_name}</h1>
+        <h1 className=' md:text-xl font-semibold my-2'>{services_name}</h1>
       </div>
       <div  className=" flex-1 text-center">
-        <h1 className="text-lg font-medium text-gray-500">{date}</h1>
+        <h1 className="text-sm md:text-lg font-medium text-gray-500">{date}</h1>
       </div>
       <div className="flex  flex-1 justify-end">
         <div className="dropdown dropdown-end">

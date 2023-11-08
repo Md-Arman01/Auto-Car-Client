@@ -40,12 +40,12 @@ const MySchedules = () => {
 
       {bookings.length > 0 ? (
         <div>
-          <div className="flex justify-center mt-10">
-            <h1 className="text-5xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-12">
+          <div className="flex justify-center mt-5 md:mt-10">
+            <h1 className="text-3xl md:text-5xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-5 md:mb-12">
               My Booking Services: {bookings.length}
             </h1>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 px-5 lg:px-0 ">
             {bookings?.map((booking) => (
               <BookingCard
               key={booking?._id}
@@ -64,24 +64,24 @@ const MySchedules = () => {
         </div>
       )}
       {/* --------------- */}
-      <div className="flex justify-center gap-10 my-32">
+      <div className="flex justify-center gap-10 my-10 md:my-20 lg:my-32">
         <p className="border w-20 md:w-[150px] lg:w-[250px]"></p>
         <p className="border w-20 md:w-[150px] lg:w-[250px]"></p>
       </div>
       {/* my pendding services */}
       {penddingServices.length > 0 ? (
         <div>
-          <h1 className="text-5xl text-center bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-12">
+          <h1 className="text-3xl  md:text-5xl text-center bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-5 md:mb-12">
             My Pendding Services: {penddingServices.length}
           </h1>
           <div>
-            <div>
+            <div className="px-5 lg:px-0">
               <div className="flex justify-between mb-5">
-                <h1 className="text-xl font-semibold">Services</h1>
-                <h1 className="text-xl font-semibold">Taking Date</h1>
-                <h1 className="text-xl font-semibold">Booking</h1>
+                <h1 className="text-sm md:text-xl font-semibold">Services</h1>
+                <h1 className="text-sm md:text-xl font-semibold">Taking Date</h1>
+                <h1 className="text-sm md:text-xl font-semibold">Booking</h1>
               </div>
-              <div className="grid ">
+              <div className="grid mb-5 md:mb-10">
                 {penddingServices?.map((penddingService) => (
                   <MyPenddingService
                   key={penddingService?._id}

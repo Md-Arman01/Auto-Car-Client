@@ -37,7 +37,7 @@ const Services = () => {
       <Helmet>
         <title>Auto Car | Services</title>
       </Helmet>
-      <div className=" mt-11 px-60">
+      <div className="mt-11 px-14 lg:px-60">
         <form onSubmit={handleSearch}>
           <div className="input-group">
             <input
@@ -67,7 +67,7 @@ const Services = () => {
       {/* all service cards */}
       {
                 searchField.length > 0 ?
-                <div className="grid grid-cols-1 gap-5 my-10">
+                <div className="grid grid-cols-1 gap-5 my-10 px-5 lg:px-0">
                 {seeAll ?
                     similarService?.map((card, index) => <SearchCard key={index} card={card}></SearchCard>)
                     :
@@ -76,7 +76,7 @@ const Services = () => {
                 }
                 </div> 
                 : 
-                <div className="grid grid-cols-1 gap-5 my-10">
+                <div className="grid grid-cols-1 gap-5 my-10 px-5 lg:px-0">
                 {seeAll ?
                   services?.data?.map(service => <AllServicesCard key={service._id} service={service}></AllServicesCard>)
                   :

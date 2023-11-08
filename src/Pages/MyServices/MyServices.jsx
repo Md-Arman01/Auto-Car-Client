@@ -22,16 +22,16 @@ const MyServices = () => {
     <Helmet>
       <title>Auto Car | My Services</title>
     </Helmet>
-      <div className="my-12">
+      <div className="my-5 md:my-12">
         {
             services.length > 0 ?
             <div>
         <div className="flex justify-center">
-          <h1 className="text-5xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-12">
+          <h1 className="text-3xl md:text-5xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text font-rancho font-semibold mb-5 md:mb-12">
             My Services: {services.length}
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-5 lg:px-0 container mx-auto">
           {services?.map((service) => (
               <MyServicesCard
               key={service._id}

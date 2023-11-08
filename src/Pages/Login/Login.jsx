@@ -71,15 +71,15 @@ const Login = () => {
 
   return (
     <>
-    <div className=" container mx-auto flex justify-center items-center gap-20 my-10">
+    <div className=" container mx-auto flex flex-col lg:flex-row justify-center items-center  lg:gap-20 mb-7  md:my-10">
       <Helmet>
         <title>Auto Car | Login</title>
       </Helmet>
       <div>
-        <Lottie className="w-[700px]" animationData={loginAnimation}></Lottie>
+        <Lottie className=" lg:w-[700px] px-10 md:px-0" animationData={loginAnimation}></Lottie>
       </div>
       <div>
-        <div className="flex justify-center mt-14 md:mt-20 lg:mt-28 px-5 md:px-0">
+        <div className="flex justify-center mt-14 md:mt-20 lg:mt-28 px-5 md:px-0 w-[400px]">
           <div className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="relative mx-4 -mt-6 mb-4 grid h-20 md:h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-[#54C2C3] to-[#00463E] bg-clip-border text-white shadow-lg shadow-[#54C2C3]/40">
               <h3 className="block font-rancho text-xl md:text-4xl  leading-snug tracking-normal text-white antialiased">
@@ -88,7 +88,7 @@ const Login = () => {
             </div>
             <form onSubmit={handleLogin}>
               <div className="flex flex-col gap-4 p-6">
-                <div className="relative h-11 w-full min-w-[200px]">
+                <div className="relative h-11 w-full ">
                   <input
                     type="email"
                     name="email"
@@ -101,7 +101,7 @@ const Login = () => {
                     Email address
                   </label>
                 </div>
-                <div className="relative h-11 w-full min-w-[200px]">
+                <div className="relative h-11 w-full ">
                   <input
                     type="password"
                     name="password"

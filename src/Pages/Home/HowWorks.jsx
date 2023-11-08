@@ -1,14 +1,14 @@
 const HowWorks = () => {
   return (
     <div>
-      <h1 className="text-center text-3xl md:text-4xl lg:text-6xl font-rancho">
+      <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-rancho mt-10 lg:mt-0">
         How It Works
       </h1>
       <hr className="w-28 mx-auto my-3 " />
      
-     <div className="flex justify-between gap-5 container mx-auto my-10">
+     <div className="flex flex-col md:flex-row justify-between gap-5 container mx-auto md:my-10">
         {/* card 1 */}
-      <div className="card  bg-base-100">
+      <div className="card  bg-base-100 ">
         <figure className="px-10 pt-10">
           <img
             src="https://i.ibb.co/XJjV8J4/Screenshot-101-removebg-preview.png"
@@ -18,11 +18,11 @@ const HowWorks = () => {
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="text-2xl font-semibold">Find Your Ride</h2>
-          <p className="text-sm text-gray-500 font-medium">Find Your Ride is a mobile app or online service designed to help users discover and book transportation options, such as taxis, rideshares, public transit, or rental vehicles.</p>
+          <p className="text-sm text-gray-500 font-medium">Find Your Ride is a mobile app or online service designed to help users discover and book transportation options, such as taxis, rideshares, public transit, or rental taxis vehicles.</p>
           
         </div>
       </div>
-      <img className="w-20 h-20 mt-10" src="https://i.ibb.co/RptDzCt/Screenshot-103-removebg-preview.png" alt="" />
+      
         {/* card 2 */}
       <div className="card  bg-base-100 ">
         <figure className="px-10 pt-10">
@@ -38,7 +38,7 @@ const HowWorks = () => {
           
         </div>
       </div>
-      <img className="w-20 h-20 mt-10" src="https://i.ibb.co/RptDzCt/Screenshot-103-removebg-preview.png" alt="" />
+    
         {/* card 3 */}
       <div className="card  bg-base-100">
         <figure className="px-10 pt-10">

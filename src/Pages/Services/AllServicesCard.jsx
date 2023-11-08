@@ -15,10 +15,10 @@ const AllServicesCard = ({ service }) => {
   } = service || {};
 
   return (
-    <div className="h-[311px] shadow-md  rounded-xl bg-clip-border hover:shadow-2xl hover:shadow-[#00463E] px-7 py-7">
-      <div className="flex gap-10">
+    <div className="lg:h-[311px] shadow-md  rounded-xl bg-clip-border hover:shadow-2xl hover:shadow-[#00463E] px-5 md:px-7 py-5 md:py-7">
+      <div className="flex flex-col lg:flex-row gap-10">
         <div>
-          <div className="w-[350px] h-[250px]">
+          <div className="lg:w-[350px] lg:h-[250px]">
             <img
               className="w-full h-full object-cover rounded-xl"
               src={services_img}
@@ -27,16 +27,16 @@ const AllServicesCard = ({ service }) => {
           </div>
         </div>
         <div>
-          <h1 className="text-xl md:text-3xl lg:text-4xl mb-4 font-rancho font-medium bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl mb-4 font-rancho font-medium bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">
             {services_name}
           </h1>
-          <h1 className="text-sm leading-6 text-gray-500 w-[800px] h-32">
+          <h1 className="text-sm leading-6 text-gray-500 lg:w-[800px] h-32">
             {services_description?.slice(0, 99)}
           </h1>
           {/*  */}
-          <div className="flex items-center gap-10">
+          <div className="flex items-center justify-between lg:gap-10">
             <div>
-              <p className="text-xl font-semibold text-gray-600">For 1 Passenger</p>
+              <p className="text-base md:text-xl font-semibold text-gray-600">For 1 Passenger</p>
               <p className="text-2xl font-semibold bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">
                 ${price}
               </p>

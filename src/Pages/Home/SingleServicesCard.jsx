@@ -82,18 +82,18 @@ const SingleServicesCard = () => {
     </Helmet>
       <div className="container mx-auto my-10">
         <div>
-          <h1 className="text-5xl font-rancho font-semibold underline underline-offset-8 mb-12">
+          <h1 className="text-3xl md:text-5xl font-rancho font-semibold underline underline-offset-8 mb-12 px-5 lg:px-0">
             Service{" "}
             <span className="bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">
               Provider
             </span>
           </h1>
         </div>
-        <div className="flex gap-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* provider */}
-          <div>
-            <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border hover:shadow-2xl hover:shadow-[#00463E]">
-              <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-80 rounded-xl bg-clip-border">
+          <div className="px-5 lg:px-0">
+            <div className="relative flex flex-col text-gray-700 bg-white shadow-md lg:w-96 rounded-xl bg-clip-border hover:shadow-2xl hover:shadow-[#00463E]">
+              <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg  rounded-xl bg-clip-border">
                 <img
                   src={provider_img}
                   className="h-full w-full object-cover"
@@ -124,7 +124,7 @@ const SingleServicesCard = () => {
                   src={services_img}
                   alt=""
                 />
-                <div className="flex items-center md:w-[500px]">
+                <div className="flex items-center lg:w-[500px]">
                   <div className="space-y-2 md:space-y-5 px-1 lg:px-5 mt-2 lg:mt-0 mb-6 lg:mb-0  w-full">
                     <div className="mb-1">
                       <div className="flex items-center justify-center gap-5 mb-4">
@@ -272,7 +272,7 @@ const SingleServicesCard = () => {
           </div>
         </div>
         {/* provider other services */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10 px-5 lg:px-0">
 
         {
           remainning?.map(item => <ProviderOtherServiceCard key={item._id} item={item}></ProviderOtherServiceCard>)
