@@ -13,7 +13,7 @@ const HowWorks = () => {
           <img
             src="https://i.ibb.co/XJjV8J4/Screenshot-101-removebg-preview.png"
             alt="Shoes"
-            className="w-20 h-20"
+            className="w-24 h-24 border border-dashed border-black rounded-full p-3"
           />
         </figure>
         <div className="card-body items-center text-center">
@@ -29,7 +29,7 @@ const HowWorks = () => {
           <img
             src="https://i.ibb.co/LSJ3Lpm/54058-removebg-preview.png"
             alt="Shoes"
-            className="w-20 h-20"
+            className="w-24 h-24 border border-dashed border-black rounded-full p-3"
           />
         </figure>
         <div className="card-body items-center text-center">
@@ -45,7 +45,7 @@ const HowWorks = () => {
           <img
             src="https://i.ibb.co/NVwDpcZ/10846-removebg-preview.png"
             alt="Shoes"
-            className="w-20 h-20"
+            className="w-24 h-24 border border-dashed border-black rounded-full p-3"
           />
         </figure>
         <div className="card-body items-center text-center">
