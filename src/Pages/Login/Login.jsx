@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Lottie from "lottie-react";
 import loginAnimation from "../../assets/Lotties/loginEnimation.json";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { BiLogoGithub } from 'react-icons/bi';
 import useAuth from "../../Hooks/useAuth";
@@ -10,6 +10,8 @@ import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+  console.log(location.state)
   const {loginUser, loginWithGoogle, loginWithGithub} = useAuth()
 
 
@@ -24,7 +26,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         toast.success('Login Successfully!', { id: toastId })
-        navigate('/')
+        navigate(location.state? location.state : '/')
         console.log(result.user);
       })
       .catch((error) => {
@@ -39,7 +41,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user)
         toast.success('Login Successfully!', { id: toastId })
-        navigate('/')
+        navigate(location.state? location.state : '/')
 
       })
       .catch((error) => {
@@ -53,7 +55,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         toast.success('Login Successfully!', { id: toastId })
-        navigate("/");
+        navigate(location.state? location.state : '/')
       })
       .catch((error) => {
         toast.error( error.code , {id: toastId})

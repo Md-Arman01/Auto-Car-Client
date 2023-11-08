@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import PopularServices from "./PopularServices";
 import HowWorks from "./HowWorks";
 import AboutUs from "./AboutUs";
+import Location from "./Location";
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <HowWorks></HowWorks>
             <PopularServices></PopularServices>
             <AboutUs></AboutUs>
+            <Location></Location>
         </div>
     );
 };

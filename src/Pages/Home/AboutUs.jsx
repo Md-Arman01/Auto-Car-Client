@@ -1,5 +1,4 @@
-import Lottie from "lottie-react";
-import aboutUs from '../../assets/Lotties/aboutUs.json'
+
 
 const AboutUs = () => {
   return (
@@ -49,7 +48,8 @@ const AboutUs = () => {
     </div>
       {/* image */}
       <div>
-      <Lottie className="w-[700px]" animationData={aboutUs}></Lottie>
+      
+      <img className="w-[900px]" src="https://i.ibb.co/9rtxtSC/Screenshot-107.png" alt="" />
       </div>
     </div>
   );
