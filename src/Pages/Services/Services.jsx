@@ -4,6 +4,7 @@ import AllServicesCard from "./AllServicesCard";
 import { useState } from "react";
 import SearchCard from "./SearchCard";
 import { Helmet } from "react-helmet-async";
+import Footer from "../Home/Footer";
 
 
 
@@ -31,7 +32,8 @@ const Services = () => {
 
 
   return (
-    <div className="container mx-auto">
+    <>
+    <div className="container mx-auto min-h-screen">
       <Helmet>
         <title>Auto Car | Services</title>
       </Helmet>
@@ -56,7 +58,7 @@ const Services = () => {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
+                  />
               </svg>
             </button>
           </div>
@@ -65,7 +67,7 @@ const Services = () => {
       {/* all service cards */}
       {
                 searchField.length > 0 ?
-                 <div className="grid grid-cols-1 gap-5 my-10">
+                <div className="grid grid-cols-1 gap-5 my-10">
                 {seeAll ?
                     similarService?.map((card, index) => <SearchCard key={index} card={card}></SearchCard>)
                     :
@@ -79,14 +81,14 @@ const Services = () => {
                   services?.data?.map(service => <AllServicesCard key={service._id} service={service}></AllServicesCard>)
                   :
                   services?.data?.slice(0, 6)?.map(service => <AllServicesCard key={service._id} service={service}></AllServicesCard>)
-      
+                  
                 }
             </div>
             }
       {/* --- */}
       {
         services?.data?.length > 6 &&
-
+        
         <div className={seeAll && 'hidden'}>
       <button
       onClick={()=>setSeeAll(true)}
@@ -98,6 +100,8 @@ const Services = () => {
       
         
     </div>
+    <Footer></Footer>
+      </>
   );
 };
 

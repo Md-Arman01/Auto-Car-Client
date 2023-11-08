@@ -5,6 +5,7 @@ import HowWorks from "./HowWorks";
 import AboutUs from "./AboutUs";
 import Location from "./Location";
 import DownLoadApp from "./DownLoadApp";
+import Footer from "./Footer";
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
             <AboutUs></AboutUs>
             <Location></Location>
             <DownLoadApp></DownLoadApp>
+            <Footer></Footer>
         </div>
     );
 };

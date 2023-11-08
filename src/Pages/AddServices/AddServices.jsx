@@ -2,6 +2,7 @@ import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 import { Helmet } from "react-helmet-async";
+import Footer from "../Home/Footer";
 
 const AddServices = () => {
     const {user} = useAuth()
@@ -43,6 +44,7 @@ const AddServices = () => {
 
 
     return (
+      <>
         <div className="container mx-auto my-10 lg:my-16 px-5 lg:px-0">
           <Helmet>
             <title>Auto Car | Add Services</title>
@@ -121,6 +123,8 @@ const AddServices = () => {
         </form>
       </div>
     </div>
+     <Footer></Footer>
+      </>
     );
 };
 

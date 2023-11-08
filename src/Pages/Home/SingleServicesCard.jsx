@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import ProviderOtherServiceCard from "./ProviderOtherServiceCard";
 import { Helmet } from "react-helmet-async";
+import Footer from "./Footer";
 
 const SingleServicesCard = () => {
   const [providerServices, setProviderServices] = useState([]);
@@ -279,6 +280,7 @@ const SingleServicesCard = () => {
         </div>
         {/*  */}
       </div>
+      <Footer></Footer>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import Navber from "../Navber/Navber";
+import Footer from "../../Pages/Home/Footer";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const ErrorPage = () => {
         alt=""
       />
     </div>
+    <Footer></Footer>
     </>
   );
 };

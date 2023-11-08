@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { ImCancelCircle } from 'react-icons/im';
+import Footer from "../Home/Footer";
 
 const MyServices = () => {
   const { user } = useAuth();
@@ -50,6 +51,7 @@ const MyServices = () => {
         }
         
       </div>
+      <Footer></Footer>
     </>
   );
 };

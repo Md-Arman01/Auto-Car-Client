@@ -5,6 +5,7 @@ import BookingCard from "./BookingCard";
 import MyPenddingService from "./MyPenddingService";
 import { ImCancelCircle } from "react-icons/im";
 import { Helmet } from "react-helmet-async";
+import Footer from "../Home/Footer";
 
 const MySchedules = () => {
   const { user } = useAuth();
@@ -30,6 +31,7 @@ const MySchedules = () => {
   }, [user?.email]);
 
   return (
+    <>
     <div className="container mx-auto">
       <Helmet>
         <title>Auto Car | My Schedules</title>
@@ -46,11 +48,11 @@ const MySchedules = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {bookings?.map((booking) => (
               <BookingCard
-                key={booking?._id}
-                booking={booking}
-                bookings={bookings}
-                setBookings={setBookings}></BookingCard>
-            ))}
+              key={booking?._id}
+              booking={booking}
+              bookings={bookings}
+              setBookings={setBookings}></BookingCard>
+              ))}
           </div>
         </div>
       ) : (
@@ -82,8 +84,8 @@ const MySchedules = () => {
               <div className="grid ">
                 {penddingServices?.map((penddingService) => (
                   <MyPenddingService
-                    key={penddingService?._id}
-                    penddingService={penddingService}
+                  key={penddingService?._id}
+                  penddingService={penddingService}
                     penddingServices={penddingServices}
                     setPenddingServices={
                       setPenddingServices
@@ -103,6 +105,8 @@ const MySchedules = () => {
       )}
       {/* -------- */}
     </div>
+    <Footer></Footer>
+      </>
   );
 };
 

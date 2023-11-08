@@ -15,7 +15,7 @@ const ProviderOtherServiceCard = ({ item }) => {
       
         <div className="card bg-base-100 shadow-xl hover:shadow-2xl hover:shadow-[#00463E] pt-4 ">
           <figure>
-            <img className="rounded-xl " src={services_img} alt="Shoes" />
+            <img className="rounded-xl h-52" src={services_img} alt="Shoes" />
           </figure>
           <div className="card-body">
             <h2 className="text-3xl font-rancho bg-gradient-to-tr from-[#54C2C3] to-[#00463E] text-transparent bg-clip-text">
